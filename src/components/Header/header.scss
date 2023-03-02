@@ -1,0 +1,15 @@
+header {
+    background: white;
+    position: relative;
+    nav {
+        width: 70%;
+        margin: 0 auto;
+        @include flex(space-between, center, none);
+        li {
+            list-style-type: none;
+            color: rgb(0, 0, 0.8);
+            font-size: 12px;
+            opacity: 0.8;
+        }
+    }
+}
