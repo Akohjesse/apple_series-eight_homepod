@@ -1,0 +1,18 @@
+@import "./breakpoints.scss";
+@mixin flex($jc, $ai, $gap) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gap;
+}
+
+@mixin flex_col($gap) {
+    flex-direction: column;
+    display: flex;
+    gap: $gap;
+}
+
+@function toRem($value) {
+    $remValue: (calc($value / 16)) + rem;
+    @return $remValue;
+}

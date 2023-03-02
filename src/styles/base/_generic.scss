@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+}
+span.word_wrap {
+    overflow: hidden;
+    display: inline-block;
+}
+[data-animation="header"] span.word {
+    overflow-y: hidden;
+}
+.child_wrap {
+    width: 70%;
+    margin: 0 auto;
+}
+.abs {
+    position: absolute;
+}
+.ta_center {
+    text-align: center;
+}
+.mg_au {
+    margin: 0 auto;
+}
