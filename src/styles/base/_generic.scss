@@ -21,3 +21,12 @@ span.word_wrap {
 .mg_au {
     margin: 0 auto;
 }
+[data-animation="fadeInOut"] {
+    transition: 500ms ease-in-out;
+    opacity: 0;
+    transform: translateY(200px);
+}
+[data-animation="fadeInOut"].show {
+    transform: translateY(0);
+    opacity: 1;
+}

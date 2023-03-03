@@ -1,8 +1,24 @@
 import { useEffect } from "react";
+import watchLogo from "../../assets/logo_watch_series_8.png";
 import "./hero.scss";
 
 export default function hero() {
     useEffect(() => {
+        const fadeInOut = document.querySelectorAll("[data-animation='fadeInOut']");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    entry.target.classList.add("show");
+                });
+            },
+            { threshold: 1, rootMargin: "-50px" }
+        );
+
+        fadeInOut.forEach((item) => {
+            observer.observe(item);
+        });
+
         const html = document.documentElement;
         const canvas = document.getElementById("seriesE");
         const context = canvas.getContext("2d");
@@ -12,10 +28,7 @@ export default function hero() {
         };
 
         const img = new Image();
-        img.src = currentFrame(1);
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        img.src = currentFrame(0);
         img.onload = function () {
             context.drawImage(img, 0, 0, canvas.width, canvas.height);
         };
@@ -38,20 +51,39 @@ export default function hero() {
             const scrollTop = html.scrollTop;
             const maxScrollTop = wrap.scrollHeight - window.innerHeight;
             const scrollFraction = scrollTop / maxScrollTop;
-            console.log(scrollFraction);
             const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
             requestAnimationFrame(() => updateImage(frameIndex + 1));
+
+            if (scrollTop > 10) {
+                console.log("dhbj");
+                document.querySelector(".heroWrap_sticky").classList.add("fixed");
+            } else {
+                document.querySelector(".heroWrap_sticky").classList.toggle("fixed");
+            }
         });
 
         preloadImages();
     }, []);
 
     return (
-        <>
-            <div className="heroWrap">
-                <canvas data-pin-scroll className="heroWrap_canvas" id="seriesE"></canvas>
+        <div className="heroWrap">
+            <div className="heroWrap_sticky">
+                <div className="heroWrap_sticky_container child_wrap">
+                    <h3>Apple Watch Series 8</h3>
+                    <nav>
+                        <ul>
+                            <li>Overview</li>
+                            <li>Why Apple Watch</li>
+                            <button>Buy</button>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div className="e"></div>
-        </>
+            <canvas width={window.innerWidth} height={window.innerHeight} data-pin-scroll className="heroWrap_canvas" id="seriesE"></canvas>
+            <div className="heroWrap_txt">
+                <img data-animation="fadeInOut" src={watchLogo} alt="" />
+                <h1 data-animation="fadeInOut">A healthy leap ahead.</h1>
+            </div>
+        </div>
     );
 }
