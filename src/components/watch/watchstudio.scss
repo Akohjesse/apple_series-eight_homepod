@@ -1,0 +1,85 @@
+.watchStudio {
+    background-color: $fadegray;
+    padding: 5rem 0rem;
+    height: 68rem;
+    background-image: url("../../assets/cto-bands.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 170rem;
+    background-position-x: 24%;
+    background-position-y: 85%;
+    text-align: center;
+    &_txt {
+        @include flex_col(2rem);
+        h2 {
+            font-size: toRem(50);
+            font-weight: 600;
+        }
+        p {
+            font-size: toRem(30);
+            font-weight: 600;
+            color: $blacktxt;
+        }
+        button {
+            width: 13rem;
+            font-size: 1.1rem;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            color: white;
+            background: transparent;
+            background: linear-gradient(to right, #ff00ff, #00ffff);
+        }
+    }
+    &_img {
+        position: relative;
+        margin: 0 auto;
+        width: 23%;
+        img {
+            width: 100%;
+            position: absolute;
+            top: 5rem;
+            left: 0;
+        }
+    }
+}
+.water6 {
+    height: 120vh;
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(https://www.apple.com/v/apple-watch-series-8/b/images/overview/fitness/fitness_hero__fzbfydzz1eeu_large_2x.jpg);
+    &_txt {
+        position: absolute;
+        top: 40%;
+        right: 15%;
+        color: white;
+        width: 40%;
+        p {
+            font-size: toRem(27);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: toRem(100);
+            font-weight: 600;
+            line-height: 5.3rem;
+        }
+    }
+}
+.animate_bands {
+    animation-name: bands;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes bands {
+    0% {
+        background-position-x: 24%;
+    }
+    100% {
+        background-position-x: 77%;
+    }
+}

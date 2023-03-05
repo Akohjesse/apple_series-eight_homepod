@@ -1,0 +1,35 @@
+.ipad_ar {
+    background: $fadegray;
+    &_wrap {
+        overflow: hidden;
+        width: 90%;
+        @include flex(center, start, 5rem);
+        padding-top: 5rem;
+        height: 38rem;
+        &_txt {
+            margin-top: 4rem;
+            @include flex_col(2rem);
+            width: 45%;
+            color: $blacktxt;
+            h2 {
+                font-size: toRem(57);
+                font-weight: 500;
+                line-height: 3.8rem;
+            }
+            p {
+                font-size: toRem(19);
+                font-weight: 350;
+                width: 60%;
+                line-height: 1.8rem;
+            }
+        }
+        &_img {
+            width: 24rem;
+            position: relative;
+            img {
+                width: 100%;
+                top: 2rem;
+            }
+        }
+    }
+}

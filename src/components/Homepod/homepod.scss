@@ -1,0 +1,29 @@
+.homePod {
+    color: white;
+    height: 300vh;
+    position: relative;
+    canvas {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100vw;
+        max-height: 100vh;
+        position: sticky;
+    }
+
+    &_txt {
+        text-align: center;
+        img {
+            width: 10rem;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: toRem(95);
+        }
+        position: sticky;
+        left: 30%;
+        top: 45%;
+        @include flex_col(1rem);
+    }
+}

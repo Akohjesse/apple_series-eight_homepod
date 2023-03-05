@@ -4,22 +4,6 @@ import "./hero.scss";
 
 export default function hero() {
     useEffect(() => {
-        const fadeInOut = document.querySelectorAll("[data-animation='fadeInOut']");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    entry.target.classList.add("show");
-                });
-            },
-            { threshold: 1, rootMargin: "-50px" }
-        );
-
-        fadeInOut.forEach((item) => {
-            observer.observe(item);
-        });
-
-        const html = document.documentElement;
         const canvas = document.getElementById("seriesE");
         const context = canvas.getContext("2d");
         const frameCount = 478;
@@ -39,15 +23,14 @@ export default function hero() {
                 img.src = currentFrame(i);
             }
         };
-
         const updateImage = (index) => {
             img.src = currentFrame(index);
             context.drawImage(img, 0, 0, canvas.width, canvas.height);
         };
 
-        const wrap = document.querySelector(".heroWrap");
-
         window.addEventListener("scroll", () => {
+            const html = document.documentElement;
+            const wrap = document.querySelector(".heroWrap");
             const scrollTop = html.scrollTop;
             const maxScrollTop = wrap.scrollHeight - window.innerHeight;
             const scrollFraction = scrollTop / maxScrollTop;
@@ -55,7 +38,6 @@ export default function hero() {
             requestAnimationFrame(() => updateImage(frameIndex + 1));
 
             if (scrollTop > 10) {
-                console.log("dhbj");
                 document.querySelector(".heroWrap_sticky").classList.add("fixed");
             } else {
                 document.querySelector(".heroWrap_sticky").classList.toggle("fixed");
@@ -81,8 +63,22 @@ export default function hero() {
             </div>
             <canvas width={window.innerWidth} height={window.innerHeight} data-pin-scroll className="heroWrap_canvas" id="seriesE"></canvas>
             <div className="heroWrap_txt">
-                <img data-animation="fadeInOut" src={watchLogo} alt="" />
-                <h1 data-animation="fadeInOut">A healthy leap ahead.</h1>
+                <img src={watchLogo} alt="" />
+                <h1 data-animation="header">A healthy leap ahead.</h1>
+            </div>
+            <div className="heroWrap_animeText">
+                <div className="heroWrap_animeText_cont">
+                    <h1 data-animation="paragraph">
+                        <span>
+                            Your essential companion is now even more powerful. Introducing temperature sensing for deeper insights into women’s
+                            health.1 Crash Detection to get help in an emergency. The future of health never looked so good.
+                        </span>
+                    </h1>
+                    <div className="flex">
+                        <p data-animation="header">Watch the event</p>
+                        <p data-animation="header">Watch the film</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
