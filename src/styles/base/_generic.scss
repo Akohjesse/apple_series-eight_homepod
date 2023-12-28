@@ -12,6 +12,9 @@ span.word_wrap {
 .child_wrap {
     width: 70%;
     margin: 0 auto;
+    @include media("<=tablet") {
+        width: 85%;
+    }
 }
 .abs {
     position: absolute;
@@ -21,4 +24,7 @@ span.word_wrap {
 }
 .mg_au {
     margin: 0 auto;
+}
+.watch_wrap{
+    position: relative;
 }

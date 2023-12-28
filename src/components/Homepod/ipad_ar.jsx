@@ -25,13 +25,13 @@ function ipad_ar() {
             <div className="ipad_ar_wrap mg_au">
                 <div className="ipad_ar_wrap_txt">
                     <img width={35} src="https://www.apple.com/v/ipad-air/s/images/overview/ar/ar_icon__fsn1ulwwrhua_large_2x.png" alt="" />
-                    <h2 data-animation="header">Use AR to see Homepod.</h2>
+                    <h2 data-animation="paragraph">Use AR to see Homepod.</h2>
                     <p data-animation="paragraph">Open this page using Safari on your iPhone or iPad.</p>
                 </div>
                 <div className="ipad_ar_wrap_img">
                     <img
                         className="abs"
-                        src="https://www.apple.com/v/homepod-2nd-generation/a/images/overview/ar_iphone__cwld5i9pfzki_large_2x.jpg"
+                        src="/assets/ar.webp"
                         alt=""
                     />
                 </div>

@@ -1,20 +1,45 @@
 .homeBlack {
+    overflow-x: hidden;
     padding: 6rem 0px;
     background: black;
+    @include media("<=phone-tab"){
+        padding-top: 0rem;
+    }
     &_video {
         width: 100%;
         video {
             width: 100%;
+            @include media("<=tablet"){
+                width: 60rem;
+                transform: translateX(-10rem);
+            }
+            @include media("<=phone-tab"){
+                width: 50rem;
+                transform: translateX(-14rem);
+            }
+            
         }
     }
 
     &_iph {
+        overflow-x: hidden;
         img {
             width: 100%;
-            transform: translateX(30%);
+            transform: translateX(27%);
+            @include media("<=tablet"){
+                transform: translateX(10%);
+                width: 70rem;
+               }
+               @include media("<=phone-tab"){
+               width: 45rem;
+               transform: translateX(6%);
+            }
         }
         &_txt {
             transform: translateX(-10%);
+            @include media("<=tablet"){
+                transform: translateX(0%);
+               }
         }
     }
     &_pods {
@@ -29,6 +54,9 @@
         }
         &_txt {
             transform: translateX(-10%);
+            @include media("<=tablet"){
+                transform: translateX(0%);
+               }
         }
     }
 }
@@ -36,10 +64,20 @@
 .lr {
     color: $fadegray;
     @include flex(space-between, start, 0rem);
+    @include media("<=tablet"){
+        @include flex_col(2rem)
+    }
     h3 {
         font-size: toRem(30);
         border-top: 1px solid #424245;
         padding-top: 2rem;
+        @include media("<=tablet"){
+         border-top: none;
+         font-size: toRem(35);
+         br{
+            display: none;
+         }
+        }
     }
     p {
         padding-top: 2rem;
@@ -47,6 +85,13 @@
         font-weight: 500;
 
         font-size: toRem(20);
+        line-height: toRem(25);
         border-top: 1px solid #424245;
+
+        @include media("<=tablet"){
+            border-top: none;
+            padding-top: 0;
+            width: 100%;
+           }
     }
 }

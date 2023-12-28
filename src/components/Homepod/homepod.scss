@@ -1,17 +1,21 @@
 .homePod {
     color: white;
-    height: 300vh;
-    position: relative;
-    canvas {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        max-width: 100vw;
-        max-height: 100vh;
-        position: sticky;
+    &_wrap{
+        height: 300vh;
+        position: relative;
+        @include media("<=phone-tab"){
+            height: 200vh;
+        }
+        canvas {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 100vw;
+            max-height: 100vh;
+            position: sticky;
+        }
     }
-
     &_txt {
         text-align: center;
         img {
@@ -20,6 +24,12 @@
         }
         h1 {
             font-size: toRem(95);
+            @include media("<=tablet"){
+                font-size: toRem(70);
+               }
+            @include media("<=phone-tab"){
+                font-size: toRem(40);
+               }
         }
         position: sticky;
         left: 30%;

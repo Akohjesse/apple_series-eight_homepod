@@ -1,12 +1,13 @@
 import gsap from "gsap";
+import "./index.scss";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
-import "./index.scss";
+
 export default function homeblack() {
     useEffect(() => {
         gsap.set(".homeBlack_iph img", {
-            yPercent: 70,
+            yPercent: 50,
             autoAlpha: 0,
         });
         gsap.to(".homeBlack_iph img", {
@@ -16,25 +17,22 @@ export default function homeblack() {
             scrollTrigger: {
                 trigger: ".homeBlack_iph",
                 start: "top center",
-                end: "+=1000",
+                end: "bottom bottom",
                 ease: "ease-in-out",
                 scrub: true,
             },
         });
         gsap.set(".homeBlack_pods .img", {
-            yPercent: 50,
             autoAlpha: 0,
         });
         gsap.to(".homeBlack_pods .img", {
-            yPercent: 0,
             autoAlpha: 1,
             duration: 2,
             scrollTrigger: {
                 trigger: ".homeBlack_pods",
                 start: "top center",
-                end: "+=1000",
-                ease: "ease-in-out",
-                scrub: true,
+                end: "bottom bottom",
+                ease: "ease-out",
             },
         });
     });
@@ -43,9 +41,10 @@ export default function homeblack() {
             <div className="homeBlack_video">
                 <video
                     muted
+                    playsInline
                     loop
                     autoPlay
-                    src="https://www.apple.com/105/media/us/homepod-2nd-generation/2023/f6c72fbe-43a7-45cd-b7b5-ce192011cca9/anim/spatial-awareness/large_2x.mp4#t=0.901897"
+                    src="/assets/homepod.mp4"
                 ></video>
                 <div className="homeBlack_video_txt lr child_wrap">
                     <h3 data-animation="header">Tuned to the room.</h3>
@@ -56,7 +55,7 @@ export default function homeblack() {
                 </div>
             </div>
             <div className="homeBlack_iph">
-                <img src="https://www.apple.com/v/homepod-2nd-generation/a/images/overview/handoff__1iir0nzgjkia_large_2x.jpg" alt="" />
+                <img src="/assets/handoff.webp" alt="" />
                 <br />
                 <div className="homeBlack_iph_txt lr child_wrap">
                     <h3>
@@ -74,11 +73,11 @@ export default function homeblack() {
             <br />
             <div className="homeBlack_pods">
                 <div className="img">
-                    <img src="https://www.apple.com/v/homepod-2nd-generation/a/images/overview/homepod_twins__gi5qodweaqie_large_2x.jpg" alt="" />
+                    <img src="/assets/twin_pod.webp" alt="" />
                 </div>
                 <div className="homeBlack_iph_txt lr child_wrap">
                     <h3>
-                        <span data-animation="header">All your devices</span> <br /> <span data-animation="header">in concert.</span>
+                        <span data-animation="paragraph">All your devices</span> <br /> <span data-animation="header">in concert.</span>
                     </h3>
                     <p data-animation="paragraph">
                         HomePod works seamlessly with your Apple devices. Handoff lets you transfer what’s playing on iPhone to HomePod — and the

@@ -6,9 +6,25 @@ header {
         @include flex(space-between, center, none);
         li {
             list-style-type: none;
-            color: rgb(0, 0, 0.8);
-            font-size: 12px;
+            color: rgb(0, 0, 0);
+            font-size: 13px;
             opacity: 0.8;
+            font-weight: 400;
+        }
+        .ls {
+            @include flex(center, center, 2rem);
+            @include media("<=desktop") {
+                display: none;
+            }
+        }
+        ul.buttons {
+            @include flex(center, center, 2rem);
+            .hamburger {
+                display: none;
+                @include media("<=desktop") {
+                    display: block;
+                }
+            }
         }
     }
 }

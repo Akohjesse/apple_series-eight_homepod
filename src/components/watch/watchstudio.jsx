@@ -1,5 +1,5 @@
 import "./watchstudio.scss";
-import watch from "../../assets/cto-case.png";
+import watch from "/assets/cto-case.webp";
 import { IO } from "../../animations/observe";
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ export default function watchstudio() {
             () => {
                 setTimeout(() => {
                     document.querySelector(".watchStudio").classList.add("animate_bands");
-                }, 900);
+                }, 500);
             },
             { threshold: 1 }
         );

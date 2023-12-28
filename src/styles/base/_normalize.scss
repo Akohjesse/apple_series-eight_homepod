@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Medium";
+    src: url("https://front-end-projs.s3.us-west-1.amazonaws.com/fonts/sf_pro_meduim.OTF");
+}
 * {
     margin: 0px;
     padding: 0px;
@@ -9,12 +13,17 @@ html {
     overflow-y: scroll;
     height: 100vh;
     font-size: calc(100vw / 1440 * 16);
+    @include media("<=tablet") {
+        font-size: calc(100vw / 475 * 10);
+    }
+    @include media("<=phone-tab") {
+        font-size: calc(100vw / 375 * 14);
+    }
 }
 body {
     perspective: 1px;
     background: $blacktxt;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-        sans-serif;
+    font-family: Medium, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 p {
     line-height: 2rem;

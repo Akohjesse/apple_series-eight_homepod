@@ -1,22 +1,41 @@
 .rept {
     height: 100vh;
-    position: relative;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: 120rem;
+    background-size: cover;
     background-color: $fadegray;
     background-position-x: 50%;
     background-attachment: fixed;
     background-position-y: bottom;
     background-image: url(https://www.apple.com/v/apple-watch-series-8/b/images/overview/fitness/fitness_options_hw__ej9wuo2vm9ea_large_2x.jpg);
+    @include media("<=phone-tab"){
+        background-attachment: scroll;
+        position: relative;
+    }
     &_video {
         position: sticky;
-        top: 28%;
-        video {
-            width: 13rem;
-            left: 43%;
-            top: 32%;
+        top: 31%;
+        @include media('<=phone-tab'){
             position: absolute;
+            top: 31%;
+            left: 26%;
+        }
+        video {
+            width: 12.5rem;
+            left: 43%;
+            position: absolute;
+            @include media("<=desktop"){
+                width: 17rem;
+                left: 40%;
+            }
+            @include media('<=tablet'){
+                width: 11rem;
+                left: 37%;
+            }
+            @include media('<=phone-tab'){
+                width: 13rem;
+                // border: 2px red solid;
+            }
         }
     }
 }

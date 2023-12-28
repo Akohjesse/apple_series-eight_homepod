@@ -6,11 +6,20 @@
         @include flex(center, start, 5rem);
         padding-top: 5rem;
         height: 38rem;
+        @include media("<=tablet"){
+            @include flex_col(2rem);
+           justify-content: flex-start;
+            height: auto;
+        }
         &_txt {
             margin-top: 4rem;
             @include flex_col(2rem);
             width: 45%;
             color: $blacktxt;
+            @include media("<=tablet"){
+               width: 100%;
+               margin-top: 0rem;
+            }
             h2 {
                 font-size: toRem(57);
                 font-weight: 500;
@@ -29,7 +38,18 @@
             img {
                 width: 100%;
                 top: 2rem;
+                @include media("<=tablet"){
+                  position: relative;
+                 }
             }
+            @include media("<=tablet"){
+               width: 60%;
+               margin: 0 auto;
+               }
+            @include media("<=phone-tab"){
+               width: 100%;
+               margin: 0 auto;
+               }
         }
     }
 }

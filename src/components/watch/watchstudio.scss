@@ -9,16 +9,39 @@
     background-position-x: 24%;
     background-position-y: 85%;
     text-align: center;
+    @include media("<=tablet"){
+        background-position-x: 33%;
+    }
+    @include media("<=phone-tab"){
+      height: 53rem;
+      background-size: 110rem;
+      background-position-x: 33.8%;
+    }
+    
     &_txt {
         @include flex_col(2rem);
         h2 {
             font-size: toRem(50);
             font-weight: 600;
+            letter-spacing: -1px;
+            line-height: toRem(50);
+            @include media("<=phone-tab"){
+                font-size: toRem(40);
+                line-height: toRem(43);
+                max-width: 90%;
+                margin: 0 auto;
+                br{
+                    display: none;
+                }
+            }
         }
         p {
             font-size: toRem(30);
             font-weight: 600;
             color: $blacktxt;
+            @include media("<=phone-tab"){
+                font-size: toRem(23);
+            }
         }
         button {
             width: 13rem;
@@ -34,13 +57,16 @@
     &_img {
         position: relative;
         margin: 0 auto;
-        width: 23%;
+        width: 21rem;
         img {
             width: 100%;
             position: absolute;
             top: 5rem;
             left: 0;
-        }
+        } 
+        @include media("<=phone-tab"){
+           width: 13rem;
+          }
     }
 }
 .water6 {
@@ -51,12 +77,30 @@
     background-size: cover;
     background-attachment: fixed;
     background-image: url(https://www.apple.com/v/apple-watch-series-8/b/images/overview/fitness/fitness_hero__fzbfydzz1eeu_large_2x.jpg);
+    @include media("<=tablet"){
+        height: 90vh;
+       @include flex_col(0);
+       align-items: center;
+       justify-content: center;
+       background-attachment: scroll;
+       background-size: cover;
+    } 
     &_txt {
         position: absolute;
         top: 40%;
         right: 15%;
         color: white;
         width: 40%;
+        @include media("<=tablet"){
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 60%;
+        } 
+        @include media("<=phone-tab"){
+           width: 80%;
+        } 
         p {
             font-size: toRem(27);
             font-weight: 700;
@@ -66,6 +110,14 @@
             font-size: toRem(100);
             font-weight: 600;
             line-height: 5.3rem;
+            @include media("<=tablet"){
+                font-size: toRem(80);
+                line-height: toRem(80);
+            } 
+            @include media("<=phone-tab"){
+                font-size: toRem(60);
+                line-height: toRem(60);
+            } 
         }
     }
 }
@@ -74,12 +126,39 @@
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    animation-direction: normal;
 }
-@keyframes bands {
-    0% {
-        background-position-x: 24%;
+
+@include media(">=tablet"){
+    @keyframes bands {
+        0% {
+            background-position-x: 24%;
+    
+        }
+        100% {
+            background-position-x: 77%;
+        }
     }
-    100% {
-        background-position-x: 77%;
+}
+@include media("<tablet"){
+    @keyframes bands {
+        0% {
+            background-position-x: 33%;
+    
+        }
+        100% {
+            background-position-x: 67.6%;
+        }
+    }
+}
+@include media("<=phone-tab"){
+    @keyframes bands {
+        0% {
+            background-position-x: 33.8%;
+    
+        }
+        100% {
+            background-position-x: 66.8%;
+        }
     }
 }
