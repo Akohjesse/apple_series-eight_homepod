@@ -3,8 +3,8 @@ import "./index.scss";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
-
-export default function homeblack() {
+import "./index.scss";
+export default function Homeblack() {
     useEffect(() => {
         gsap.set(".homeBlack_iph img", {
             yPercent: 50,
