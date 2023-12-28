@@ -8,11 +8,11 @@ import Watches from "./components/watchfeat";
 import { split } from "./animations/text";
 import { useEffect } from "react";
 import scroll from "./animations/scroll";
-scroll();
 
 function App() {
     useEffect(() => {
         split();
+        scroll();
     });
     return (
         <div className="watch_wrap">
