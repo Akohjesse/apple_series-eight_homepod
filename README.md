@@ -8,7 +8,8 @@ Design Animation Mash-up: Apple Series 8" is a project that demonstrates the pot
 
 The UI was graciously designed by [Victor Adeyemo](https://www.linkedin.com/in/adeyemo-victor/]).
 
-<img src="art/dribbble_shot_HD.png" />
+![Frame 1](https://github.com/user-attachments/assets/b439b32f-cc4b-4cb1-a308-28d99728c8c6)
+
 
 ## Architecture
 
