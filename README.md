@@ -38,15 +38,6 @@ Source: [Android Components Architecture in a Modular Word](https://hackernoon.c
 **Konveyor** - For generating random data for tests.</br>
 **Espresso** - For UI testing.</br>
 
-## Todo
-
-I had a lot of fun building this. There are some improvements I intend to make.
-
-- More tests. </br>
-- Build settings screen with Jetpack Compose
-- Complete article search
-- Animations
-- Dark mode
 
 ## Build Instructions
 - Clone repository.</br>
@@ -58,7 +49,7 @@ I had a lot of fun building this. There are some improvements I intend to make.
 
 ## License
 ```
-Copyright 2020 Abdul-Mujeeb Aliu
+Copyright 2023 Jesse Akoh
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
