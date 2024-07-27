@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.com/aliumujib/artic.svg)](http://hits.dwyl.com/aliumujib/artic)
 
-# Apple Design Design Mashup
+# Apple Design Animation Mashup
 
 Design Animation Mash-up: Apple Series 8" is a project that demonstrates the potential of dynamic animations in e-commerce web design. This concept reimagines a product landing page for Apple's Series 8 device, leveraging engaging visual effects to enhance user engagement and potentially drive immediate purchase decisions. The project showcases how strategic animation can be employed to create a compelling and interactive product showcase in a digital retail environment.
 
